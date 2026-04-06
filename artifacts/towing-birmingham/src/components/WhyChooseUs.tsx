@@ -50,13 +50,14 @@ export default function WhyChooseUs() {
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-yellow-400 rounded-2xl p-8">
-            <h3 className="font-black text-black text-2xl mb-3">Professional &amp; Reliable</h3>
+            <h3 className="font-black text-black text-2xl mb-3">Why Choose Us?</h3>
             <ul className="space-y-2 text-black">
               {[
-                "Fully licensed and insured fleet",
-                "All makes and models covered",
-                "Motorcycles, vans &amp; commercial vehicles",
-                "Accident recovery specialists",
+                "Rapid response across Birmingham",
+                "Experienced towing professionals",
+                "Affordable rates starting from £60",
+                "Available day &amp; night",
+                "Licensed &amp; insured drivers",
                 "No hidden charges — ever"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-2 font-medium">
@@ -70,11 +71,11 @@ export default function WhyChooseUs() {
             <h3 className="font-black text-white text-2xl mb-3">Serving All of Birmingham</h3>
             <ul className="space-y-2 text-gray-300">
               {[
-                "City Centre &amp; Digbeth",
+                "Birmingham City Centre",
                 "Edgbaston &amp; Harborne",
-                "Kings Heath &amp; Moseley",
-                "Sutton Coldfield &amp; Erdington",
-                "Solihull, Coventry &amp; beyond"
+                "Selly Oak &amp; Bournville",
+                "Handsworth &amp; Perry Barr",
+                "Aston &amp; surrounding areas"
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-2">
                   <span className="text-yellow-400 font-bold">📍</span>

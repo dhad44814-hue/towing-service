@@ -1,33 +1,33 @@
 const testimonials = [
   {
-    name: "James T.",
-    location: "Erdington, Birmingham",
+    name: "Mark L.",
+    location: "Birmingham City Centre",
     stars: 5,
-    text: "Broke down on the A38 at 11pm on a Friday night. Called Birmingham Towing and they were with me in 25 minutes. Professional driver, clean truck, and my car was at the garage safely before midnight. Absolutely saved the day!"
+    text: "Fast and reliable service! Arrived within 20 minutes. The driver was professional and got my car to the garage without any issues. Highly recommend Birmingham Towing for anyone who needs quick help."
+  },
+  {
+    name: "Claire B.",
+    location: "Edgbaston, Birmingham",
+    stars: 5,
+    text: "Very professional and affordable towing service. I called late at night expecting to wait hours, but they were there in under 30 minutes. Fair pricing, no hidden charges, and a friendly driver. Outstanding."
+  },
+  {
+    name: "Tony R.",
+    location: "Handsworth, Birmingham",
+    stars: 5,
+    text: "Highly recommended for emergency breakdowns. My van broke down on the A38 and they were with me in no time. The whole thing was handled smoothly from the call to drop-off. Five stars all round."
   },
   {
     name: "Sarah M.",
-    location: "Harborne, Birmingham",
+    location: "Selly Oak, Birmingham",
     stars: 5,
-    text: "My battery died in a Tesco car park and I had the kids with me. These guys arrived super fast, jump-started my car, and even stayed to make sure everything was fine before leaving. Fantastic service and very reasonably priced."
+    text: "My battery died in a supermarket car park. These guys arrived quickly, jump-started my car, and stayed to make sure everything was fine before leaving. Brilliant service at a very fair price."
   },
   {
-    name: "Dean R.",
-    location: "Solihull",
+    name: "Dean K.",
+    location: "Aston, Birmingham",
     stars: 5,
-    text: "Used Birmingham Towing for a flatbed transport of my classic car. They were careful, professional, and the price was fair. The driver knew exactly what he was doing. I wouldn't trust anyone else with it."
-  },
-  {
-    name: "Priya K.",
-    location: "Moseley, Birmingham",
-    stars: 5,
-    text: "Locked my keys in the car outside work on a rainy Wednesday. They came within 20 minutes and got me in without a scratch. Very polite and professional. Will definitely use again — hopefully not too soon!"
-  },
-  {
-    name: "Mike O.",
-    location: "Sutton Coldfield",
-    stars: 5,
-    text: "Called at 2am when my van broke down on the M6. Within half an hour a truck arrived. The driver was professional and reassuring. My van was recovered safely. Best towing service in Birmingham, full stop."
+    text: "Used them for a flatbed transport of my car after an accident. They were careful, professional, and the price was fair. The driver knew exactly what he was doing. I wouldn't trust anyone else."
   }
 ];
 

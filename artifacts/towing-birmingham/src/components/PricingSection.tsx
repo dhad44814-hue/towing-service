@@ -3,11 +3,12 @@ import { Phone } from "lucide-react";
 const PHONE = "0121 000 0000";
 
 const pricing = [
-  { service: "Emergency Towing", from: "£75", note: "Local Birmingham tow" },
-  { service: "Flatbed Towing", from: "£95", note: "All vehicle types" },
-  { service: "Roadside Assistance", from: "£45", note: "Fix on-site first" },
+  { service: "Emergency Towing", from: "£60", note: "Local Birmingham tow" },
+  { service: "Car Recovery", from: "£70", note: "Safe vehicle recovery" },
+  { service: "Flatbed Towing", from: "£80", note: "All vehicle types" },
+  { service: "Roadside Assistance", from: "£40", note: "Fix on-site first" },
   { service: "Jump Start", from: "£35", note: "Battery boost service" },
-  { service: "Tire Change", from: "£30", note: "Spare tyre swap" },
+  { service: "Tyre Change", from: "£30", note: "Spare tyre swap" },
   { service: "Car Lockout", from: "£40", note: "No damage guaranteed" },
   { service: "Fuel Delivery", from: "£30", note: "+ cost of fuel" }
 ];
@@ -23,11 +24,11 @@ export default function PricingSection() {
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             No hidden charges. No call-out fees. The price you're quoted is the price you pay.
-            Emergency towing starting from just <strong className="text-yellow-400">£75</strong>.
+            Emergency towing starting from just <strong className="text-yellow-400">£60</strong>.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {pricing.map((p, i) => (
             <div
               key={i}

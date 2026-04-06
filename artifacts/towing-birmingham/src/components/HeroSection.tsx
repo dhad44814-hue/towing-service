@@ -50,7 +50,8 @@ export default function HeroSection() {
 
         <p className="text-gray-400 text-base mb-10 max-w-xl mx-auto">
           Stranded in Birmingham? Our professional tow truck drivers arrive in under 30 minutes. 
-          Emergency towing, roadside assistance, jump starts and more — day or night.
+          Emergency towing, roadside assistance, car recovery and more — day or night. 
+          Rates starting from <strong className="text-yellow-400">£60</strong>.
         </p>
 
         {/* CTA Buttons */}

@@ -1,8 +1,8 @@
 export default function ServiceArea() {
   const areas = [
-    "Birmingham City Centre", "Edgbaston", "Harborne", "Kings Heath", "Moseley",
-    "Digbeth", "Aston", "Erdington", "Sutton Coldfield", "Great Barr",
-    "Handsworth", "Perry Barr", "Selly Oak", "Bournville", "Northfield",
+    "Birmingham City Centre", "Edgbaston", "Selly Oak", "Handsworth", "Aston",
+    "Harborne", "Kings Heath", "Moseley", "Digbeth", "Erdington",
+    "Sutton Coldfield", "Great Barr", "Perry Barr", "Bournville", "Northfield",
     "Kings Norton", "Yardley", "Sheldon", "Sparkhill", "Tyseley",
     "Solihull", "Wolverhampton", "Walsall", "Dudley", "West Bromwich",
     "Smethwick", "Oldbury", "Halesowen", "Coventry", "Lichfield"

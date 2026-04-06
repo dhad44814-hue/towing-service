@@ -6,43 +6,43 @@ const services = [
   {
     emoji: "🚛",
     title: "Emergency Towing",
-    desc: "Broken down on the motorway or a side street? Our emergency tow trucks reach you fast across all of Birmingham. Available 24/7, no call-out fee.",
+    desc: "Quick response towing for cars, vans, and vehicles across Birmingham. Available 24/7 — we reach you in under 30 minutes, no call-out fee.",
     keywords: "Emergency towing Birmingham"
-  },
-  {
-    emoji: "🚗",
-    title: "Flatbed Towing",
-    desc: "Specialist flatbed tow trucks for low-clearance, luxury, and damaged vehicles. Your car is safely secured and transported without further damage.",
-    keywords: "Flatbed towing Birmingham"
   },
   {
     emoji: "🛠️",
     title: "Roadside Assistance",
-    desc: "Minor breakdown? We'll come to you first and try to fix the issue on the spot. Battery, tyre, fuel — we handle it before towing.",
+    desc: "Battery jump start, tyre change, and fuel delivery anytime. We come to you first and try to fix the problem on the spot before towing.",
     keywords: "Roadside assistance Birmingham"
+  },
+  {
+    emoji: "🔄",
+    title: "Car Recovery",
+    desc: "Safe and professional recovery for broken-down vehicles anywhere in Birmingham and the West Midlands. All makes and models covered.",
+    keywords: "Car recovery Birmingham"
+  },
+  {
+    emoji: "🚗",
+    title: "Flatbed Towing",
+    desc: "Secure flatbed transport for luxury, low-clearance, and damaged vehicles. Your car is safely loaded and delivered without further damage.",
+    keywords: "Flatbed towing Birmingham"
   },
   {
     emoji: "⚡",
     title: "Jump Start",
-    desc: "Dead battery? Our technicians provide fast jump start service across Birmingham. Back on the road in minutes, guaranteed.",
+    desc: "Dead battery? Our technicians provide fast jump start service across Birmingham. Back on the road in minutes.",
     keywords: "Jump start Birmingham"
-  },
-  {
-    emoji: "🔧",
-    title: "Tire Change",
-    desc: "Flat tyre on the A38 or M6? We'll come to you and change it fast so you can get moving again safely.",
-    keywords: "Tire change Birmingham"
   },
   {
     emoji: "🔑",
     title: "Car Lockout",
-    desc: "Locked your keys in the car? We use professional tools to get you back in without damage to your vehicle.",
+    desc: "Locked your keys inside? We use professional tools to get you back in without any damage to your vehicle.",
     keywords: "Car lockout Birmingham"
   },
   {
     emoji: "⛽",
     title: "Fuel Delivery",
-    desc: "Run out of fuel? We'll bring the right fuel to your location anywhere in Birmingham so you don't need a tow at all.",
+    desc: "Run out of petrol or diesel? We'll bring the right fuel directly to your location anywhere in Birmingham.",
     keywords: "Fuel delivery Birmingham"
   }
 ];
