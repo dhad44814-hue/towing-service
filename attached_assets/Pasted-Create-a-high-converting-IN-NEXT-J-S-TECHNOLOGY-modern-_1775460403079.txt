@@ -1,0 +1,133 @@
+Create a high-converting, IN NEXT J.S TECHNOLOGY modern, mobile-first website for a towing and roadside assistance business in  birmingham.
+
+Business Name: [Your Brand Name]
+Location:  birmingham
+
+GOAL:
+Generate phone calls and leads for emergency towing services (Rank & Rent model).
+
+STYLE:
+
+* Clean, modern UI (like Uber style)
+* Bold colors (black, yellow, white)
+* Mobile-first design
+* Fast loading
+* Clear CTA buttons
+
+---
+
+HOMEPAGE STRUCTURE:
+
+1. HERO SECTION (ABOVE THE FOLD)
+
+* Headline: "24/7 Emergency Towing in [City]"
+* Subheadline: "Fast Response • Affordable Rates • Call Now"
+* Big CALL NOW button (click-to-call)
+* Background image: tow truck / roadside emergency
+
+---
+
+2. TRUST SECTION
+
+* "Trusted Local Towing Service in [City]"
+* Add:
+  ✔ 24/7 Availability
+  ✔ Fast Response Time
+  ✔ Licensed & Insured
+  ✔ Affordable Pricing
+
+---
+
+3. SERVICES SECTION
+   Include cards for:
+
+* Emergency Towing
+* Flatbed Towing
+* Roadside Assistance
+* Jump Start
+* Tire Change
+* Car Lockout
+* Fuel Delivery
+
+Each service = short description + CTA
+
+---
+
+4. WHY CHOOSE US
+
+* Fast arrival (30 mins)
+* Professional drivers
+* Affordable pricing
+* Available day & night
+
+---
+
+5. SERVICE AREA
+   List nearby areas/cities for SEO
+
+---
+
+6. TESTIMONIALS
+   Add 3–5 customer reviews (realistic style)
+
+---
+
+7. PRICING SECTION
+
+* "Towing starting from $75"
+* "Affordable emergency rates"
+
+---
+
+8. FINAL CTA (VERY IMPORTANT)
+
+* "Need a Tow Truck Now?"
+* BIG CALL BUTTON
+
+---
+
+SEO REQUIREMENTS:
+
+* Keyword: "Towing Service [City]"
+* Include variations:
+
+  * "Tow Truck [City]"
+  * "Emergency Towing [City]"
+  * "Roadside Assistance [City]"
+
+---
+
+TECH FEATURES:
+
+* Click-to-call button
+* WhatsApp button
+* Google Maps embed
+* Fast loading
+* Schema markup (Local Business)
+
+---
+
+EXTRA (VERY IMPORTANT):
+
+* Create separate pages:
+
+  * /towing-service-[city]
+  * /emergency-towing-[city]
+  * /roadside-assistance-[city]
+
+---
+
+TONE:
+
+* Urgent
+* Trustworthy
+* Action-driven (call now)
+
+---
+
+OUTPUT:
+
+* Full homepage content
+* SEO optimized headings (H1, H2, H3)
+* Conversion-focused copy
+* Mobile responsive layout
