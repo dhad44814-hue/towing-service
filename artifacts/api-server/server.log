@@ -1,0 +1,8 @@
+
+> @workspace/api-server@0.0.0 start C:\Users\FC SHOP\Downloads\towing service\Attached-Assets\artifacts\api-server
+> node --enable-source-maps ./dist/index.mjs
+
+◇ injected env (2) from ..\..\.env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+✅ MongoDB connected
+[18:41:42.228] [32mINFO[39m (12440): [36mServer listening[39m
+    [35mport[39m: 3001

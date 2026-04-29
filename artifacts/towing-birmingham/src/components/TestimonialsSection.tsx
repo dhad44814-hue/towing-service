@@ -1,78 +1,111 @@
-const testimonials = [
-  {
-    name: "Mark L.",
-    location: "Birmingham City Centre",
-    stars: 5,
-    text: "Fast and reliable service! Arrived within 20 minutes. The driver was professional and got my car to the garage without any issues. Highly recommend Birmingham Towing for anyone who needs quick help."
-  },
-  {
-    name: "Claire B.",
-    location: "Edgbaston, Birmingham",
-    stars: 5,
-    text: "Very professional and affordable towing service. I called late at night expecting to wait hours, but they were there in under 30 minutes. Fair pricing, no hidden charges, and a friendly driver. Outstanding."
-  },
-  {
-    name: "Tony R.",
-    location: "Handsworth, Birmingham",
-    stars: 5,
-    text: "Highly recommended for emergency breakdowns. My van broke down on the A38 and they were with me in no time. The whole thing was handled smoothly from the call to drop-off. Five stars all round."
-  },
-  {
-    name: "Sarah M.",
-    location: "Selly Oak, Birmingham",
-    stars: 5,
-    text: "My battery died in a supermarket car park. These guys arrived quickly, jump-started my car, and stayed to make sure everything was fine before leaving. Brilliant service at a very fair price."
-  },
-  {
-    name: "Dean K.",
-    location: "Aston, Birmingham",
-    stars: 5,
-    text: "Used them for a flatbed transport of my car after an accident. They were careful, professional, and the price was fair. The driver knew exactly what he was doing. I wouldn't trust anyone else."
-  }
-];
+import { useEffect, useState, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Testimonial, allTestimonials } from '../data/testimonials';
+import { TestimonialCard } from './TestimonialCard';
 
 export default function TestimonialsSection() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [testimonialsList, setTestimonialsList] = useState<Testimonial[]>([]);
+  const [scrollOffset, setScrollOffset] = useState(0);
+  const VISIBLE_SLIDES = isDesktop ? 3 : 1;
+  const CARD_WIDTH = isDesktop ? 300 : 280; // smaller card width for tighter layout
+  const TOTAL_WIDTH = allTestimonials.length * CARD_WIDTH;
+  const SPEED = 1.2; // faster scroll speed
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Duplicate testimonials 4x for seamless loop
+    const duplicated = Array.from({ length: 4 }, () => [...allTestimonials]).flat();
+    setTestimonialsList(duplicated);
+  }, []);
+
+  const updateScroll = useCallback(() => {
+    setScrollOffset((prev) => {
+      const newOffset = prev + SPEED;
+      if (newOffset >= TOTAL_WIDTH) {
+        return 0;
+      }
+      return newOffset;
+    });
+    requestAnimationFrame(updateScroll);
+  }, [TOTAL_WIDTH]);
+
+  useEffect(() => {
+    if (testimonialsList.length > 0) {
+      requestAnimationFrame(updateScroll);
+    }
+  }, [testimonialsList, updateScroll]);
+
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="relative py-20 px-4 bg-[#FFFFFF]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p className="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-3">Real Reviews</p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
+          <p className="text-[#111111] font-semibold uppercase tracking-[0.35em] text-sm mb-3">
+            Trusted by 100+ Customers Across Birmingham
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-black text-[#111111]">
             What Birmingham Drivers Say About Us
           </h2>
-          <div className="flex items-center justify-center gap-2 mt-4">
-            <div className="flex">{"★★★★★".split("").map((s, i) => (
-              <span key={i} className="text-yellow-400 text-2xl">{s}</span>
-            ))}</div>
-            <span className="text-gray-500 font-medium">4.9/5 — Trusted by hundreds of Birmingham drivers</span>
+          <p className="mt-4 text-[#333333] max-w-2xl mx-auto leading-8">
+            Continuous stream of verified 5⭐ reviews from our satisfied towing clients.
+          </p>
+        </div>
+
+        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
+          <div className="rounded-full bg-white px-5 py-3 text-sm font-medium text-[#111111] shadow-sm border border-slate-200">
+            <span className="text-[#E11D2E]">★★★★★</span> 4.9/5 average (100+ reviews)
+          </div>
+          <div className="rounded-full bg-white px-5 py-3 text-sm font-medium text-[#111111] shadow-sm border border-slate-200">
+            Verified Google reviews from Birmingham drivers
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-gray-50 border border-gray-100 rounded-2xl p-6 hover:shadow-md hover:border-yellow-200 transition-all duration-300"
-            >
-              <div className="flex mb-3">
-                {Array.from({ length: t.stars }).map((_, j) => (
-                  <span key={j} className="text-yellow-400 text-lg">★</span>
-                ))}
-              </div>
-              <p className="text-gray-700 text-sm leading-relaxed mb-4 italic">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-yellow-400 font-bold text-sm">
-                  {t.name[0]}
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">{t.name}</p>
-                  <p className="text-gray-400 text-xs">📍 {t.location}</p>
-                </div>
-              </div>
-            </div>
-          ))}
+        <div className="relative overflow-hidden rounded-2xl">
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#FFFFFF] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#FFFFFF] to-transparent" />
+          
+          <div 
+            className="flex gap-3"
+            style={{
+              transform: `translateX(-${scrollOffset}px)`,
+              width: `${testimonialsList.length * (CARD_WIDTH + 12)}px`
+            }}
+          >
+            <AnimatePresence>
+              {testimonialsList.map((testimonial, idx) => (
+                <motion.div
+                  key={`${testimonial.name}-${idx}`}
+                  className="min-w-[280px] md:min-w-[300px] flex-shrink-0"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TestimonialCard testimonial={testimonial} />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="mt-12 rounded-[24px] border border-slate-200 bg-white px-6 py-8 text-center shadow-sm sm:px-8">
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-500">Need Fast Towing Help?</p>
+          <h3 className="mt-3 text-2xl font-black text-slate-900">Call now for immediate roadside assistance</h3>
+          <a
+            href="tel:01210000000"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-[#E11D2E] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-[#E11D2E]/20 transition hover:bg-[#C81A28]"
+          >
+            Call Now
+          </a>
         </div>
       </div>
     </section>
   );
 }
+

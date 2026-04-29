@@ -67,65 +67,66 @@
 }
 
 :root {
-  --button-outline: rgba(0,0,0, .10);
-  --badge-outline: rgba(0,0,0, .05);
+  --button-outline: rgba(255,255,255,0.12);
+  --badge-outline: rgba(255,255,255,0.10);
   --opaque-button-border-intensity: -8;
-  --elevate-1: rgba(0,0,0, .03);
-  --elevate-2: rgba(0,0,0, .08);
+  --elevate-1: rgba(15, 23, 42, 0.04);
+  --elevate-2: rgba(15, 23, 42, 0.08);
 
-  --background: 0 0% 100%;
-  --foreground: 0 0% 7%;
-  --border: 0 0% 90%;
-  --card: 0 0% 98%;
-  --card-foreground: 0 0% 7%;
-  --card-border: 0 0% 90%;
-  --sidebar: 0 0% 98%;
-  --sidebar-foreground: 0 0% 7%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-primary: 48 100% 50%;
-  --sidebar-primary-foreground: 0 0% 7%;
-  --sidebar-accent: 0 0% 95%;
-  --sidebar-accent-foreground: 0 0% 7%;
-  --sidebar-ring: 48 100% 50%;
+  --background: 210 100% 99%;
+  --foreground: 218 25% 19%;
+  --border: 213 25% 92%;
+  --card: 0 0% 100%;
+  --card-foreground: 218 25% 19%;
+  --card-border: 213 20% 92%;
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 218 25% 19%;
+  --sidebar-border: 213 20% 92%;
+  --sidebar-primary: 220 59% 33%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 214 92% 56%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 220 59% 33%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 7%;
-  --popover-border: 0 0% 90%;
-  --primary: 48 100% 50%;
-  --primary-foreground: 0 0% 7%;
-  --secondary: 0 0% 10%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 0 0% 95%;
-  --muted-foreground: 0 0% 45%;
-  --accent: 48 100% 50%;
-  --accent-foreground: 0 0% 7%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  --input: 0 0% 90%;
-  --ring: 48 100% 50%;
-  --chart-1: 48 100% 50%;
-  --chart-2: 0 0% 10%;
-  --chart-3: 0 0% 40%;
-  --chart-4: 48 80% 60%;
-  --chart-5: 0 0% 20%;
+  --popover-foreground: 218 25% 19%;
+  --popover-border: 213 20% 92%;
+  --primary: 220 59% 33%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 92% 56%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 214 15% 91%;
+  --muted-foreground: 218 16% 38%;
+  --muted-border: 214 20% 89%;
+  --accent: 3 90% 57%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 3 90% 57%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 214 20% 98%;
+  --ring: 214 92% 56%;
+  --chart-1: 220 59% 33%;
+  --chart-2: 213 20% 12%;
+  --chart-3: 210 34% 30%;
+  --chart-4: 214 80% 65%;
+  --chart-5: 210 35% 20%;
 
   --app-font-sans: 'Inter', sans-serif;
   --app-font-serif: Georgia, serif;
   --app-font-mono: Menlo, monospace;
-  --radius: .5rem;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow: 0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.06);
-  --shadow-md: 0 10px 15px rgba(0,0,0,0.07), 0 4px 6px rgba(0,0,0,0.05);
-  --shadow-lg: 0 20px 25px rgba(0,0,0,0.08), 0 10px 10px rgba(0,0,0,0.04);
-  --shadow-xl: 0 25px 50px rgba(0,0,0,0.12);
+  --radius: .75rem;
+  --shadow-sm: 0 6px 18px rgba(15,23,42,0.08);
+  --shadow: 0 20px 40px rgba(15,23,42,0.1);
+  --shadow-md: 0 24px 50px rgba(15,23,42,0.12);
+  --shadow-lg: 0 30px 80px rgba(15,23,42,0.14);
+  --shadow-xl: 0 50px 90px rgba(15,23,42,0.16);
   --tracking-normal: 0em;
   --spacing: 0.25rem;
-  --primary-border: hsl(48 100% 42%);
-  --secondary-border: hsl(0 0% 18%);
-  --muted-border: hsl(0 0% 87%);
-  --accent-border: hsl(48 100% 42%);
-  --destructive-border: hsl(0 84% 52%);
-  --sidebar-primary-border: hsl(48 100% 42%);
-  --sidebar-accent-border: hsl(0 0% 87%);
+  --primary-border: hsl(220 59% 33%);
+  --secondary-border: hsl(214 92% 56%);
+  --muted-border: hsl(214 20% 89%);
+  --accent-border: hsl(3 90% 57%);
+  --destructive-border: hsl(3 90% 57%);
+  --sidebar-primary-border: hsl(220 59% 33%);
+  --sidebar-accent-border: hsl(214 92% 56%);
 }
 
 @layer base {
@@ -139,9 +140,9 @@
 
 /* Pulse animation for call button */
 @keyframes pulse-ring {
-  0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); }
-  70% { box-shadow: 0 0 0 20px rgba(250, 204, 21, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.65); }
+  70% { box-shadow: 0 0 0 20px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
 }
 
 .pulse-btn {

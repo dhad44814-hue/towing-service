@@ -1,25 +1,17 @@
 import { useEffect } from "react";
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "@/components/Footer";import HeroSection from "@/components/HeroSection";import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTA from "@/components/FinalCTA";
+import Seo from "@/components/Seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQSchema from "@/components/FAQSchema";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 const WHATSAPP = "447210000000";
 
 export default function RoadsideAssistancePage() {
   useEffect(() => {
-    document.title = "Roadside Assistance Birmingham | Jump Start, Tire Change, Lockout | 24/7";
-    const desc = "Need roadside assistance in Birmingham? Jump starts, tyre changes, lockouts, fuel delivery and more. 24/7 mobile mechanics across Birmingham. Call now!";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", desc);
-    else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = desc;
-      document.head.appendChild(m);
-    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -52,41 +44,50 @@ export default function RoadsideAssistancePage() {
 
   return (
     <main>
+      <Seo
+        title="Roadside Assistance Birmingham | Jump Start, Tire Change, Lockout | 24/7"
+        description="Need roadside assistance in Birmingham? Jump starts, tyre changes, lockouts, fuel delivery and more. 24/7 mobile mechanics across Birmingham. Call now!"
+        canonical="https://birminghamtowing.co.uk/roadside-assistance-birmingham"
+        url="https://birminghamtowing.co.uk/roadside-assistance-birmingham"
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "https://birminghamtowing.co.uk/" },
+          { name: "Services", url: "https://birminghamtowing.co.uk/services" },
+          { name: "Roadside Assistance", url: "https://birminghamtowing.co.uk/roadside-assistance-birmingham" },
+        ]}
+      />
+      <FAQSchema
+        items={[
+          {
+            question: "Can you help if my car battery is dead?",
+            answer: "Yes, we can jump-start your vehicle with professional jump packs or portable chargers. This takes about 10-15 minutes and your car will be ready to go.",
+          },
+          {
+            question: "What do you charge for a jump start?",
+            answer: "Jump start service costs from £35. We accept all payment methods and can arrange insurance claims.",
+          },
+          {
+            question: "What if I've locked my keys in the car?",
+            answer: "We offer professional lockout assistance. Our technicians can safely unlock your vehicle without damage. Typical cost is from £40.",
+          },
+          {
+            question: "Can you deliver fuel to my location?",
+            answer: "Yes, we can deliver petrol or diesel fuel to your vehicle. Cost is from £30 plus the cost of fuel. We also handle misfuelled tank situations.",
+          },
+        ]}
+      />
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-gray-950 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
-            🛠️ Roadside Assistance Available Now
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
-            Roadside Assistance <span className="text-yellow-400">Birmingham</span>
-          </h1>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Stuck on the road? Our <strong className="text-white">roadside assistance Birmingham</strong> team 
-            will come to you and fix the problem on-site — no tow needed in most cases.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="flex items-center justify-center gap-3 bg-yellow-400 text-black font-black text-xl px-8 py-5 rounded-xl hover:bg-yellow-300 transition-all pulse-btn"
-            >
-              <Phone className="w-6 h-6" />
-              {PHONE}
-            </a>
-            <a
-              href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20roadside%20assistance%20in%20Birmingham`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-green-500 text-white font-bold text-lg px-8 py-5 rounded-xl hover:bg-green-400 transition-all"
-            >
-              <MessageCircle className="w-6 h-6" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Roadside Assistance Birmingham"
+        subtitle="On-Site Repairs • No Tow Needed in Most Cases"
+        description="Stuck on the road? Our roadside assistance Birmingham team will come to you and fix the problem on-site — no tow needed in most cases."
+        badgeText="🛠️ Roadside Assistance Available Now"
+        primaryButtonText="CALL NOW – 24/7"
+        secondaryButtonText="WhatsApp Help"
+        backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
+      />
 
       {/* Services grid */}
       <section className="py-16 px-4 bg-white">

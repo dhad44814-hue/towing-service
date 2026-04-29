@@ -3,7 +3,7 @@ import { Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 
 export default function NotFound() {
   return (

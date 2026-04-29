@@ -1,104 +1,89 @@
 import { Phone, MessageCircle, ChevronDown } from "lucide-react";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 const WHATSAPP = "447210000000";
 
-export default function HeroSection() {
+interface HeroSectionProps {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  badgeText?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  backgroundImage?: string;
+}
+
+export default function HeroSection({
+  title = "Need a Tow Truck in Santa Clarita CA?",
+  subtitle = "Fast Response • Affordable Rates • Call Now",
+  description = "Stranded in Santa Clarita CA? Our premium tow truck crew responds quickly with safe recovery, roadside assistance, and loading for all vehicle types.",
+  badgeText = "🚨 24/7 Emergency Towing • 30-Min Response",
+  primaryButtonText = "CALL NOW – 24/7",
+  secondaryButtonText = "WhatsApp Help",
+  backgroundImage = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80"
+}: HeroSectionProps) {
+
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        background: "linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0d0d0d 100%)"
-      }}
-    >
-      {/* Background pattern */}
+    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
       <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 40px,
-            rgba(250,204,21,0.1) 40px,
-            rgba(250,204,21,0.1) 41px
-          )`
-        }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65)), url('${backgroundImage}')` }}
       />
 
-      {/* Yellow accent bar */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-yellow-400" />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
-          <span className="w-2 h-2 bg-black rounded-full animate-pulse" />
-          24/7 Emergency Service Available Now
+      <div className="relative z-10 max-w-6xl mx-auto px-4 py-24 text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-xs uppercase tracking-[0.4em] text-slate-100 shadow-lg shadow-slate-950/20 mb-6">
+          <span className="h-2 w-2 rounded-full bg-[#E11D2E] animate-pulse" />
+          {badgeText}
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4">
-          24/7 Emergency{" "}
-          <span className="text-yellow-400">Towing</span>
-          <br />
-          in Birmingham
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tight">
+          {title}
         </h1>
 
-        <p className="text-gray-300 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-          <strong className="text-white">Fast Response</strong> &bull;{" "}
-          <strong className="text-white">Affordable Rates</strong> &bull;{" "}
-          <strong className="text-white">Licensed &amp; Insured</strong>
+        <p className="mt-6 text-lg sm:text-xl text-slate-200 max-w-3xl mx-auto leading-8">
+          {subtitle}
         </p>
 
-        <p className="text-gray-400 text-base mb-10 max-w-xl mx-auto">
-          Stranded in Birmingham? Our professional tow truck drivers arrive in under 30 minutes. 
-          Emergency towing, roadside assistance, car recovery and more — day or night. 
-          Rates starting from <strong className="text-yellow-400">£60</strong>.
+        <p className="mt-6 text-sm sm:text-base text-slate-200/85 max-w-2xl mx-auto leading-7">
+          {description}
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={`tel:${PHONE.replace(/\s/g, "")}`}
-            className="flex items-center gap-3 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-xl px-8 py-5 rounded-2xl transition-all transform hover:scale-105 pulse-btn w-full sm:w-auto justify-center"
-            aria-label="Call for emergency towing in Birmingham"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E11D2E] px-10 py-5 text-lg font-bold text-white shadow-2xl shadow-[#E11D2E]/30 transition hover:bg-[#C81A28] hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffffff] animate-pulse"
           >
             <Phone className="w-6 h-6" />
-            Call Now: {PHONE}
+            {primaryButtonText}
           </a>
           <a
-            href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20a%20tow%20truck%20in%20Birmingham`}
+            href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20a%20tow%20truck%20in%20Santa%20Clarita%20CA`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-lg px-8 py-5 rounded-2xl transition-all transform hover:scale-105 pulse-green w-full sm:w-auto justify-center"
-            aria-label="WhatsApp us for towing in Birmingham"
+            className="inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#111111] bg-transparent px-8 py-4 text-base font-semibold text-[#111111] shadow-lg transition hover:bg-[#111111] hover:text-white"
           >
-            <MessageCircle className="w-6 h-6" />
-            WhatsApp Us
+            <MessageCircle className="w-5 h-5" />
+            {secondaryButtonText}
           </a>
         </div>
 
-        {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-6 text-gray-400 text-sm">
+        <div className="mt-8 flex items-center justify-center gap-6 text-sm text-slate-300">
           <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-bold text-lg">✓</span>
+            <span className="text-[#10B981]">✓</span>
             <span>30-Min Response</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-bold text-lg">✓</span>
-            <span>Licensed &amp; Insured</span>
+            <span className="text-[#10B981]">✓</span>
+            <span>Licensed & Insured</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-bold text-lg">✓</span>
-            <span>Fixed Prices</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-bold text-lg">✓</span>
-            <span>All Vehicles</span>
+            <span className="text-[#10B981]">✓</span>
+            <span>No Hidden Fees</span>
           </div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-500 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-200 opacity-90 animate-bounce">
         <ChevronDown className="w-6 h-6" />
       </div>
     </section>

@@ -2,69 +2,71 @@ import { useEffect } from "react";
 import { Phone, MessageCircle, CheckCircle, AlertTriangle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTA from "@/components/FinalCTA";
+import Seo from "@/components/Seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQSchema from "@/components/FAQSchema";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 const WHATSAPP = "447210000000";
 
 export default function EmergencyTowingPage() {
   useEffect(() => {
-    document.title = "Emergency Towing Birmingham | 24/7 Emergency Tow Truck | Fast Response";
-    const desc = "Emergency towing in Birmingham? We'll be there in 30 minutes. 24/7 emergency tow truck service. Call now — we never close!";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", desc);
-    else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = desc;
-      document.head.appendChild(m);
-    }
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <main>
+      <Seo
+        title="Emergency Towing Santa Clarita CA | 24/7 Emergency Tow Truck | Fast Response"
+        description="Emergency towing in Santa Clarita CA? We'll be there in 30 minutes. 24/7 emergency tow truck service. Call now — we never close!"
+        canonical="https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca"
+        url="https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca"
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "https://santaclaritacotowing.com/" },
+          { name: "Services", url: "https://santaclaritacotowing.com/services" },
+          { name: "Emergency Towing", url: "https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca" },
+        ]}
+      />
+      <FAQSchema
+        items={[
+          {
+            question: "What should I do if my car breaks down on the motorway?",
+            answer: "Move to a safe location away from traffic if possible. Turn on your hazard lights and stay in your vehicle with the seatbelts fastened. Call us immediately at +14386195732. We'll dispatch the nearest tow truck and provide guidance.",
+          },
+          {
+            question: "Can you tow my car after an accident?",
+            answer: "Yes, we specialise in accident recovery and damaged vehicle towing. We handle the situation carefully to prevent further damage and work directly with insurance companies for claims processing.",
+          },
+          {
+            question: "What if my car won't start and I need immediate help?",
+            answer: "We can help with jump starts if the battery is low. However, if it's a mechanical issue, we'll tow your vehicle to a trusted garage. Call us now and describe the symptoms.",
+          },
+          {
+            question: "How much does emergency towing cost?",
+            answer: "Emergency towing starts from £75 for local recovery. Accident recovery or long-distance towing may cost more. We'll provide a quote before towing your vehicle.",
+          },
+        ]}
+      />
       <Navbar />
 
-      {/* Hero */}
-      <section
-        className="text-white py-20 px-4 relative"
-        style={{ background: "linear-gradient(135deg, #0a0a0a 0%, #1c0a00 100%)" }}
-      >
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-red-500 text-white font-bold text-xs px-4 py-2 rounded-full mb-6 uppercase tracking-wider animate-pulse">
-            <AlertTriangle className="w-4 h-4" />
-            Emergency? Call Now — We're Available 24/7
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
-            Emergency Towing <span className="text-yellow-400">Birmingham</span>
-          </h1>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Broken down? Accident? Stranded on the M6 or A38?
-            Our <strong className="text-white">emergency towing Birmingham</strong> service reaches you in under 30 minutes — any time, any day.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="flex items-center justify-center gap-3 bg-yellow-400 text-black font-black text-2xl px-8 py-6 rounded-xl hover:bg-yellow-300 transition-all pulse-btn"
-            >
-              <Phone className="w-7 h-7" />
-              {PHONE}
-            </a>
-            <a
-              href={`https://wa.me/${WHATSAPP}?text=EMERGENCY%3A%20I%20need%20a%20tow%20truck%20in%20Birmingham%20now!`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-green-500 text-white font-bold text-xl px-8 py-6 rounded-xl hover:bg-green-400 transition-all"
-            >
-              <MessageCircle className="w-7 h-7" />
-              Emergency WhatsApp
-            </a>
-          </div>
-          <p className="text-gray-400 mt-6 text-sm">30-minute average response time across Birmingham</p>
-        </div>
-      </section>
+      <HeroSection
+        title="Emergency Towing Santa Clarita CA"
+        subtitle="Fast Response • 24/7 Emergency Tow Truck Service"
+        description="Broken down? Accident? Stranded on the I-5 or CA-14? Our emergency towing Santa Clarita CA service reaches you in under 30 minutes — any time, any day."
+        badgeText="🚨 Emergency? Call Now — We're Available 24/7"
+        primaryButtonText="CALL NOW – 24/7"
+        secondaryButtonText="Emergency WhatsApp"
+        backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
+      />
+
+      <div className="text-center -mt-8 relative z-10">
+        <p className="text-[#333333] text-sm">30-minute average response time across Birmingham</p>
+      </div>
 
       {/* Steps */}
       <section className="py-16 px-4 bg-gray-950 text-white">

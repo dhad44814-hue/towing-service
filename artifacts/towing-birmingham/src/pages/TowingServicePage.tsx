@@ -1,65 +1,70 @@
 import { useEffect } from "react";
 import { Phone, MessageCircle, CheckCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import Footer from "@/components/Footer";import HeroSection from "@/components/HeroSection";import TestimonialsSection from "@/components/TestimonialsSection";
 import FinalCTA from "@/components/FinalCTA";
+import Seo from "@/components/Seo";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FAQSchema from "@/components/FAQSchema";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 const WHATSAPP = "447210000000";
 
 export default function TowingServicePage() {
   useEffect(() => {
-    document.title = "Towing Service Birmingham | Professional Tow Truck | 24/7";
-    const desc = "Looking for a reliable towing service in Birmingham? We offer professional towing for all vehicles, 24/7. Fast response, affordable rates. Call now!";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", desc);
-    else {
-      const m = document.createElement("meta");
-      m.name = "description";
-      m.content = desc;
-      document.head.appendChild(m);
-    }
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <main>
+      <Seo
+        title="Towing Service Santa Clarita CA | Professional Tow Truck | 24/7"
+        description="Looking for a reliable towing service in Santa Clarita CA? We offer professional towing for all vehicles, 24/7. Fast response, affordable rates. Call now!"
+        canonical="https://santaclaritacotowing.com/towing-service-santa-clarita-ca"
+        url="https://santaclaritacotowing.com/towing-service-santa-clarita-ca"
+      />
+      <Breadcrumbs
+        items={[
+          { name: "Home", url: "https://santaclaritacotowing.com/" },
+          { name: "Services", url: "https://santaclaritacotowing.com/services" },
+          { name: "Towing Service", url: "https://santaclaritacotowing.com/towing-service-santa-clarita-ca" },
+        ]}
+      />
+      <FAQSchema
+        items={[
+          {
+            question: "How quickly can you arrive for towing?",
+            answer: "We aim for a 30-minute response time across Santa Clarita CA. For emergency situations, we prioritise dispatch and use multiple tow trucks to ensure fast arrival. Call us immediately for the fastest service.",
+          },
+          {
+            question: "Do you work with insurance companies?",
+            answer: "Yes, we are approved by all major insurance providers. We can handle claim processing directly, so you don't need to worry about paperwork. Simply provide your insurance details when you call.",
+          },
+          {
+            question: "What vehicles can you tow?",
+            answer: "We can tow all types of vehicles including cars, vans, SUVs, motorcycles, and light commercial vehicles. We have flatbed and wheel-lift tow trucks suitable for different situations.",
+          },
+          {
+            question: "What is your towing service cost?",
+            answer: "Our towing service starts from £75 for standard local towing. Long-distance towing and special recovery services may incur additional charges. Call for a free quote based on your specific situation.",
+          },
+          {
+            question: "Are you available 24/7?",
+            answer: "Yes, we operate 24 hours a day, 7 days a week, including holidays. There are no extra charges for night or weekend callouts.",
+          },
+        ]}
+      />
       <Navbar />
 
-      {/* Hero */}
-      <section className="bg-black text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-400 text-black font-bold text-xs px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
-            🚛 Professional Towing Service
-          </div>
-          <h1 className="text-4xl md:text-5xl font-black mb-4">
-            Towing Service <span className="text-yellow-400">Birmingham</span>
-          </h1>
-          <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-            Professional tow truck service in Birmingham. We handle all vehicles — cars, vans, motorcycles, and commercial vehicles. 
-            Tow Truck Birmingham locals have trusted for over a decade.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={`tel:${PHONE.replace(/\s/g, "")}`}
-              className="flex items-center justify-center gap-3 bg-yellow-400 text-black font-black text-xl px-8 py-5 rounded-xl hover:bg-yellow-300 transition-all pulse-btn"
-            >
-              <Phone className="w-6 h-6" />
-              {PHONE}
-            </a>
-            <a
-              href={`https://wa.me/${WHATSAPP}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 bg-green-500 text-white font-bold text-lg px-8 py-5 rounded-xl hover:bg-green-400 transition-all"
-            >
-              <MessageCircle className="w-6 h-6" />
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        title="Towing Service Santa Clarita CA"
+        subtitle="Professional Tow Truck Service • All Vehicles Welcome"
+        description="Professional tow truck service in Santa Clarita CA. We handle all vehicles — cars, vans, motorcycles, and commercial vehicles. Tow Truck Santa Clarita CA locals have trusted for over a decade."
+        badgeText="🚛 Professional Towing Service"
+        primaryButtonText="CALL NOW – 24/7"
+        secondaryButtonText="WhatsApp"
+        backgroundImage="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1600&q=80"
+      />
 
       {/* Content */}
       <section className="py-16 px-4 bg-white">

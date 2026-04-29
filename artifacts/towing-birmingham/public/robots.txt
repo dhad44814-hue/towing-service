@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://birminghamtowing.co.uk/sitemap.xml
+Host: birminghamtowing.co.uk

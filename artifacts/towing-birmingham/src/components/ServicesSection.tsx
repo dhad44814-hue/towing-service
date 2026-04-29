@@ -1,86 +1,80 @@
 import { Phone } from "lucide-react";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 
 const services = [
   {
     emoji: "🚛",
     title: "Emergency Towing",
-    desc: "Quick response towing for cars, vans, and vehicles across Birmingham. Available 24/7 — we reach you in under 30 minutes, no call-out fee.",
-    keywords: "Emergency towing Birmingham"
+    desc: "24/7 rapid response towing for cars, vans, and trucks across Birmingham. No hidden fees and professional handling."
   },
   {
     emoji: "🛠️",
     title: "Roadside Assistance",
-    desc: "Battery jump start, tyre change, and fuel delivery anytime. We come to you first and try to fix the problem on the spot before towing.",
-    keywords: "Roadside assistance Birmingham"
+    desc: "Battery jump starts, tyre changes, and fuel delivery to get you moving again without waiting hours."
   },
   {
     emoji: "🔄",
-    title: "Car Recovery",
-    desc: "Safe and professional recovery for broken-down vehicles anywhere in Birmingham and the West Midlands. All makes and models covered.",
-    keywords: "Car recovery Birmingham"
+    title: "Vehicle Recovery",
+    desc: "Safe recovery for breakdowns, accidents, and off-road incidents. We tow all makes and models securely."
   },
   {
     emoji: "🚗",
     title: "Flatbed Towing",
-    desc: "Secure flatbed transport for luxury, low-clearance, and damaged vehicles. Your car is safely loaded and delivered without further damage.",
-    keywords: "Flatbed towing Birmingham"
+    desc: "Flatbed service for luxury cars, low-clearance vehicles, and those needing extra care during transport."
   },
   {
     emoji: "⚡",
     title: "Jump Start",
-    desc: "Dead battery? Our technicians provide fast jump start service across Birmingham. Back on the road in minutes.",
-    keywords: "Jump start Birmingham"
+    desc: "Fast battery boost service so you can get back on the road quickly with no damage to your vehicle."
   },
   {
     emoji: "🔑",
     title: "Car Lockout",
-    desc: "Locked your keys inside? We use professional tools to get you back in without any damage to your vehicle.",
-    keywords: "Car lockout Birmingham"
+    desc: "Professional lockout support to get you back inside your car safely and quickly."
   },
   {
     emoji: "⛽",
     title: "Fuel Delivery",
-    desc: "Run out of petrol or diesel? We'll bring the right fuel directly to your location anywhere in Birmingham.",
-    keywords: "Fuel delivery Birmingham"
+    desc: "Fuel delivered direct to your location anywhere in Birmingham so you can continue your journey."
   }
 ];
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-16 px-4 bg-white">
+    <section id="services" className="py-20 px-4 bg-[#F5F5F5]">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-yellow-500 font-bold uppercase tracking-widest text-sm mb-3">What We Offer</p>
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900">
-            Full Towing &amp; Roadside Services in Birmingham
+        <div className="text-center mb-14">
+          <p className="text-[#111111] font-semibold uppercase tracking-[0.35em] text-sm mb-3">Our Services</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#111111]">
+            Premium Towing & Roadside Support Across Birmingham
           </h2>
-          <p className="text-gray-500 mt-4 max-w-2xl mx-auto">
-            From emergency towing to fuel delivery — one call gets you sorted. We cover all of Birmingham and surrounding areas.
+          <p className="mt-4 text-[#333333] max-w-2xl mx-auto text-base sm:text-lg leading-8">
+            One call handles emergency towing, breakdown recovery, jump starts, flatbed transport, and more — built for speed and reliability.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {services.map((svc, i) => (
             <div
               key={i}
-              className="border border-gray-100 hover:border-yellow-400 bg-white hover:bg-yellow-50 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg group"
+              className="group rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-[#E11D2E]/20"
             >
-              <div className="text-4xl mb-4">{svc.emoji}</div>
-              <h3 className="text-gray-900 font-bold text-xl mb-3 group-hover:text-yellow-600 transition-colors">
-                {svc.title}
-              </h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">{svc.desc}</p>
-              <a
-                href={`tel:${PHONE.replace(/\s/g, "")}`}
-                className="inline-flex items-center gap-2 bg-black text-yellow-400 font-bold text-sm px-4 py-2 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                Call for {svc.title}
-              </a>
+              <div className="mb-6 text-4xl">{svc.emoji}</div>
+              <h3 className="text-[#111111] font-bold text-xl mb-4 group-hover:text-[#E11D2E] transition-colors">{svc.title}</h3>
+              <p className="text-[#333333] text-sm leading-relaxed mb-6">{svc.desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="tel:01210000000"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#E11D2E] px-8 py-4 text-base font-bold text-white shadow-xl shadow-[#E11D2E]/20 transition hover:bg-[#C81A28] hover:scale-105"
+          >
+            <Phone className="w-5 h-5" />
+            Call Now – 24/7 Emergency Towing
+          </a>
         </div>
       </div>
     </section>

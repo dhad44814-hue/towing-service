@@ -1,46 +1,45 @@
 import { Phone, MessageCircle } from "lucide-react";
 
-const PHONE = "0121 000 0000";
+const PHONE = "+14386195732";
 const WHATSAPP = "447210000000";
 
 export default function FinalCTA() {
   return (
-    <section className="py-20 px-4 bg-yellow-400">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 bg-black text-yellow-400 font-bold text-xs px-4 py-2 rounded-full mb-6 uppercase tracking-wider">
-          <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-          Available Right Now — 24/7
+    <section className="py-20 px-4 bg-[#111111] text-white">
+      <div className="max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.3em] text-slate-200 mb-6">
+          <span className="h-2 w-2 rounded-full bg-[#EF4444] animate-pulse" />
+          Need a Tow Truck Now?
         </div>
 
-        <h2 className="text-4xl md:text-6xl font-black text-black leading-tight mb-4">
-          Need a Tow Truck in Birmingham Now?
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight tracking-tight">
+          Fast Emergency Tow Trucks in Birmingham
         </h2>
-        <p className="text-black/70 text-lg mb-10 max-w-xl mx-auto">
-          Don't wait — every minute counts in an emergency. 
-          Call us now for the fastest tow truck service in Birmingham.
+        <p className="mt-5 text-base sm:text-lg text-slate-200/90 max-w-3xl mx-auto leading-8">
+          Every second matters in a breakdown. Call our 24/7 dispatch team now and get rapid assistance from trusted local drivers.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
           <a
             href={`tel:${PHONE.replace(/\s/g, "")}`}
-            className="flex items-center justify-center gap-3 bg-black text-yellow-400 font-black text-2xl px-10 py-6 rounded-2xl hover:bg-gray-900 transition-all transform hover:scale-105 pulse-btn"
+            className="inline-flex items-center justify-center gap-3 rounded-full bg-[#EF4444] px-9 py-4 text-base font-semibold text-white shadow-xl shadow-[#ef4444]/20 transition hover:bg-[#dc2626]"
           >
-            <Phone className="w-7 h-7" />
-            {PHONE}
+            <Phone className="w-5 h-5" />
+            CALL NOW
           </a>
           <a
             href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20a%20tow%20truck%20in%20Birmingham`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-3 bg-green-600 text-white font-bold text-xl px-10 py-6 rounded-2xl hover:bg-green-500 transition-all transform hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-9 py-4 text-base font-semibold text-white transition hover:bg-white/20"
           >
-            <MessageCircle className="w-7 h-7" />
-            WhatsApp Now
+            <MessageCircle className="w-5 h-5" />
+            Get Help Fast
           </a>
         </div>
 
-        <p className="text-black/60 text-sm mt-8">
-          Tow Truck Birmingham &bull; Emergency Towing Birmingham &bull; Roadside Assistance Birmingham
+        <p className="mt-8 text-sm text-slate-200/70">
+          Tow Truck Birmingham • Emergency Towing • Roadside Assistance • Same-day Recovery
         </p>
       </div>
     </section>
