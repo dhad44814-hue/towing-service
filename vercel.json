@@ -1,28 +1,15 @@
 {
-  "$schema": "https://vercel.com/schemas/vercel.json",
-  "installCommand": "corepack enable && pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm --dir artifacts/towing-birmingham run build",
+  "version": 2,
+  "buildCommand": "cd artifacts/towing-birmingham && npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "artifacts/towing-birmingham/dist/public",
-  "framework": "vite",
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ],
+  "installCommand": "npm install --legacy-peer-deps",
+  "framework": null,
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "MONGO_URL": "@mongo_url",
+    "PORT": "3001"
+  }
 }
-
