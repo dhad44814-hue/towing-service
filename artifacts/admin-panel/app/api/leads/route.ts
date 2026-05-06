@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getLeads, saveLeads } from '@/lib/db';
+import { getLeads, saveLeads } from '../../../lib/db';
 
 export async function GET() {
   const leads = await getLeads();

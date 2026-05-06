@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "iron-session": "^7.4.0",
+    "iron-session": "^8.0.4",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.545.0",
     "next": "^15.3.1",
@@ -18,12 +18,14 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.0",
     "@types/node": "^20.14.2",
     "@types/react": "^19.0.35",
     "@types/react-dom": "^19.0.12",
+    "@tailwindcss/postcss": "^4.2.4",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.37",
     "tailwindcss": "^4.2.2",
-    "typescript": "^5.9.5"
+    "typescript": "^5.8.3"
   }
 }
