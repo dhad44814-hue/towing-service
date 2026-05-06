@@ -2,8 +2,13 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
-    "preinstall": "corepack enable && node -e \"const fs=require('fs');['package-lock.json','yarn.lock'].forEach(f=>{try{fs.unlinkSync(f)}catch{} });\"",
+    "preinstall": "node -e \"const fs=require('fs');['package-lock.json','yarn.lock'].forEach(f=>{try{fs.unlinkSync(f)}catch{} });\"",
     "dev": "pnpm --dir artifacts/towing-birmingham run dev",
     "dev:api-server": "pnpm --dir artifacts/api-server run dev",
     "dev:mockup-sandbox": "pnpm --dir artifacts/mockup-sandbox run dev",
@@ -12,13 +17,9 @@
     "build:api-server": "pnpm --dir artifacts/api-server run build",
     "build:mockup-sandbox": "pnpm --dir artifacts/mockup-sandbox run build",
     "build:towing-birmingham": "pnpm --dir artifacts/towing-birmingham run build",
+    "build:vercel": "pnpm --dir artifacts/towing-birmingham run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
-  },
-  "private": true,
-  "packageManager": "pnpm@10.17.1",
-  "engines": {
-    "node": ">=20.0.0"
   },
   "devDependencies": {
     "@tailwindcss/oxide-win32-x64-msvc": "^4.2.2",

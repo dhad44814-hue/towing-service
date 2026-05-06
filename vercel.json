@@ -1,7 +1,7 @@
 {
   "$schema": "https://vercel.com/schemas/vercel.json",
-  "buildCommand": "pnpm --dir artifacts/towing-birmingham run build",
   "installCommand": "corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm --dir artifacts/towing-birmingham run build",
   "outputDirectory": "artifacts/towing-birmingham/dist/public",
   "framework": "vite",
   "env": {
@@ -25,3 +25,4 @@
     }
   ]
 }
+
