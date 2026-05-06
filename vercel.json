@@ -2,7 +2,7 @@
   "version": 2,
   "$schema": "https://vercel.com/schemas/vercel.json",
   "installCommand": "npm install -g pnpm && pnpm install --no-frozen-lockfile",
-  "buildCommand": "pnpm --dir artifacts/towing-birmingham run build",
-  "outputDirectory": "artifacts/towing-birmingham/dist/public"
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public"
 }
 
