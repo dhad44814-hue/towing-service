@@ -20,16 +20,16 @@ export default function EmergencyTowingPage() {
   return (
     <main>
       <Seo
-        title="Emergency Towing Santa Clarita CA | 24/7 Emergency Tow Truck | Fast Response"
-        description="Emergency towing in Santa Clarita CA? We'll be there in 30 minutes. 24/7 emergency tow truck service. Call now — we never close!"
-        canonical="https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca"
-        url="https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca"
+        title="Emergency Towing Birmingham | 24/7 Emergency Tow Truck | Fast Response"
+        description="Emergency towing in Birmingham? We'll be there in 30 minutes. 24/7 emergency tow truck service. Call now — we never close!"
+        canonical="https://birminghamtowing.co.uk/emergency-towing-birmingham"
+        url="https://birminghamtowing.co.uk/emergency-towing-birmingham"
       />
       <Breadcrumbs
         items={[
-          { name: "Home", url: "https://santaclaritacotowing.com/" },
-          { name: "Services", url: "https://santaclaritacotowing.com/services" },
-          { name: "Emergency Towing", url: "https://santaclaritacotowing.com/emergency-towing-santa-clarita-ca" },
+          { name: "Home", url: "https://birminghamtowing.co.uk/" },
+          { name: "Services", url: "https://birminghamtowing.co.uk/services" },
+          { name: "Emergency Towing", url: "https://birminghamtowing.co.uk/emergency-towing-birmingham" },
         ]}
       />
       <FAQSchema
@@ -55,9 +55,9 @@ export default function EmergencyTowingPage() {
       <Navbar />
 
       <HeroSection
-        title="Emergency Towing Santa Clarita CA"
+        title="Emergency Towing Birmingham"
         subtitle="Fast Response • 24/7 Emergency Tow Truck Service"
-        description="Broken down? Accident? Stranded on the I-5 or CA-14? Our emergency towing Santa Clarita CA service reaches you in under 30 minutes — any time, any day."
+        description="Broken down? Accident? Stranded on the A38 or M6? Our emergency towing Birmingham service reaches you in under 30 minutes — any time, any day."
         badgeText="🚨 Emergency? Call Now — We're Available 24/7"
         primaryButtonText="CALL NOW – 24/7"
         secondaryButtonText="Emergency WhatsApp"

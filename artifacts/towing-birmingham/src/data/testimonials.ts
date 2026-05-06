@@ -19,9 +19,9 @@ const names = [
 ];
 
 const locations = [
-  'Santa Clarita', 'Canyon Country', 'Newhall', 'Valencia', 'Stevenson Ranch', 'Castaic', 'Saugus', 'Bouquet Canyon',
-  'Sand Canyon', 'Pico Canyon', 'Mint Canyon', 'Solemint', 'Honby', 'Lang', 'Fair Oaks Ranch', 'Placerita Canyon',
-  'Tick Canyon', 'Wheatland', 'Aliso Canyon', 'Elizabeth Lake', 'Lake Hughes', 'Green Valley', 'Acton', 'Agua Dulce'
+  'Birmingham', 'Sutton Coldfield', 'Solihull', 'Walsall', 'Wolverhampton', 'Dudley', 'Coventry', 'West Bromwich',
+  'Birmingham City Centre', 'Halesowen', 'Rugby', 'Tamworth', 'Rubery', 'Harborne', 'Kings Heath', 'Erdington',
+  'Hagley', 'Quinton', 'Selly Oak', 'Bournville', 'Sparkhill', 'Kings Norton', 'Great Barr', 'Hall Green'
 ];
 
 const texts = [

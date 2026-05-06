@@ -11,7 +11,6 @@ import ContactPage from "@/pages/ContactPage";
 import AboutPage from "@/pages/AboutPage";
 import ServicesPage from "@/pages/ServicesPage";
 import ServiceAreasPage from "@/pages/ServiceAreasPage";
-import CityServicePage from "@/pages/CityServicePage";
 import StickyCallBar from "@/components/StickyCallBar";
 
 const queryClient = new QueryClient();
@@ -22,7 +21,6 @@ function Router() {
       <Switch>
         <Route path="/" component={HomePage} />
         <Route path="/towing-service-birmingham" component={TowingServicePage} />
-        <Route path="/service/:city" component={CityServicePage} />
         <Route path="/emergency-towing-birmingham" component={EmergencyTowingPage} />
         <Route path="/roadside-assistance-birmingham" component={RoadsideAssistancePage} />
         <Route path="/services" component={ServicesPage} />

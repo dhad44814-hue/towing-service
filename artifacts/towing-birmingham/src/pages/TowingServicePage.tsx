@@ -18,23 +18,23 @@ export default function TowingServicePage() {
   return (
     <main>
       <Seo
-        title="Towing Service Santa Clarita CA | Professional Tow Truck | 24/7"
-        description="Looking for a reliable towing service in Santa Clarita CA? We offer professional towing for all vehicles, 24/7. Fast response, affordable rates. Call now!"
-        canonical="https://santaclaritacotowing.com/towing-service-santa-clarita-ca"
-        url="https://santaclaritacotowing.com/towing-service-santa-clarita-ca"
+        title="Towing Service Birmingham | Professional Tow Truck | 24/7"
+        description="Looking for a reliable towing service in Birmingham? We offer professional towing for all vehicles, 24/7. Fast response, affordable rates. Call now!"
+        canonical="https://birminghamtowing.co.uk/towing-service-birmingham"
+        url="https://birminghamtowing.co.uk/towing-service-birmingham"
       />
       <Breadcrumbs
         items={[
-          { name: "Home", url: "https://santaclaritacotowing.com/" },
-          { name: "Services", url: "https://santaclaritacotowing.com/services" },
-          { name: "Towing Service", url: "https://santaclaritacotowing.com/towing-service-santa-clarita-ca" },
+          { name: "Home", url: "https://birminghamtowing.co.uk/" },
+          { name: "Services", url: "https://birminghamtowing.co.uk/services" },
+          { name: "Towing Service", url: "https://birminghamtowing.co.uk/towing-service-birmingham" },
         ]}
       />
       <FAQSchema
         items={[
           {
             question: "How quickly can you arrive for towing?",
-            answer: "We aim for a 30-minute response time across Santa Clarita CA. For emergency situations, we prioritise dispatch and use multiple tow trucks to ensure fast arrival. Call us immediately for the fastest service.",
+            answer: "We aim for a 30-minute response time across Birmingham. For emergency situations, we prioritise dispatch and use multiple tow trucks to ensure fast arrival. Call us immediately for the fastest service.",
           },
           {
             question: "Do you work with insurance companies?",
@@ -57,9 +57,9 @@ export default function TowingServicePage() {
       <Navbar />
 
       <HeroSection
-        title="Towing Service Santa Clarita CA"
+        title="Towing Service Birmingham"
         subtitle="Professional Tow Truck Service • All Vehicles Welcome"
-        description="Professional tow truck service in Santa Clarita CA. We handle all vehicles — cars, vans, motorcycles, and commercial vehicles. Tow Truck Santa Clarita CA locals have trusted for over a decade."
+        description="Professional tow truck service in Birmingham. We handle all vehicles — cars, vans, motorcycles, and commercial vehicles. Birmingham locals have trusted us for years."
         badgeText="🚛 Professional Towing Service"
         primaryButtonText="CALL NOW – 24/7"
         secondaryButtonText="WhatsApp"

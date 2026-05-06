@@ -11,10 +11,10 @@ export default function WhyChooseUsPage() {
   return (
     <main>
       <Seo
-        title="Why Choose Santa Clarita CA Towing | Trusted Tow Truck Service"
-        description="Discover why Santa Clarita CA Towing is the top choice for towing services. 30-min response time, 10+ years experience, 5-star rated, 24/7 available service."
-        canonical="https://santaclaritacotowing.com/why-choose-us"
-        url="https://santaclaritacotowing.com/why-choose-us"
+        title="Why Choose Birmingham Towing | Trusted Tow Truck Service"
+        description="Discover why Birmingham Towing is the top choice for towing services. 30-min response time, 10+ years experience, 5-star rated, 24/7 available service."
+        canonical="https://birminghamtowing.co.uk/why-choose-us"
+        url="https://birminghamtowing.co.uk/why-choose-us"
       />
       <Navbar />
 
@@ -26,9 +26,9 @@ export default function WhyChooseUsPage() {
       />
 
       <HeroSection
-        title="Why Santa Clarita CA drivers trust us for every tow."
+        title="Why Birmingham drivers trust us for every tow."
         subtitle="Proven Experience • Premium Service • Local Excellence"
-        description="We've been serving Santa Clarita CA for over a decade with fast response times, professional drivers, and transparent pricing. Here's what makes us different."
+        description="We've been serving Birmingham for over a decade with fast response times, professional drivers, and transparent pricing. Here's what makes us different."
         badgeText="⭐ 4.9/5 Stars • 10+ Years Local Service"
         primaryButtonText="Call Now"
         secondaryButtonText="View Services"
@@ -45,7 +45,7 @@ export default function WhyChooseUsPage() {
               What Sets Us Apart
             </h2>
             <p className="text-[#333333] max-w-2xl mx-auto text-lg">
-              We combine speed, professionalism, and customer care to deliver the best towing experience in Santa Clarita CA.
+              We combine speed, professionalism, and customer care to deliver the best towing experience in Birmingham.
             </p>
           </div>
 
@@ -130,7 +130,7 @@ export default function WhyChooseUsPage() {
               <thead>
                 <tr className="bg-[#0F172A] text-white">
                   <th className="px-6 py-4 text-left font-bold">Feature</th>
-                  <th className="px-6 py-4 text-center font-bold">Santa Clarita CA Towing</th>
+                  <th className="px-6 py-4 text-center font-bold">Birmingham Towing</th>
                   <th className="px-6 py-4 text-center font-bold">Other Services</th>
                 </tr>
               </thead>

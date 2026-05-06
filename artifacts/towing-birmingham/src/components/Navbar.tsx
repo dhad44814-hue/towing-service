@@ -33,10 +33,6 @@ export default function Navbar() {
             Services
           </Link>
 
-          <Link href="/why-choose-us" className={desktopLinkClass("/why-choose-us")}>
-            Why Choose Us
-          </Link>
-
           <Link href="/about-us" className={desktopLinkClass("/about-us")}>
             About Us
           </Link>
@@ -74,10 +70,6 @@ export default function Navbar() {
 
           <Link href="/services" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={() => setOpen(false)}>
             Services
-          </Link>
-
-          <Link href="/why-choose-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={() => setOpen(false)}>
-            Why Choose Us
           </Link>
 
           <Link href="/about-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={() => setOpen(false)}>

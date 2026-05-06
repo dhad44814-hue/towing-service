@@ -15,17 +15,17 @@ export default function Footer() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://santaclaritacotowing.com/#localbusiness",
-            "name": "Santa Clarita CA Towing",
-            "description": "24/7 emergency towing and roadside assistance in Santa Clarita CA, USA",
-            "url": "https://santaclaritacotowing.com",
+            "@id": "https://birminghamtowing.co.uk/#localbusiness",
+            "name": "Birmingham Towing",
+            "description": "24/7 emergency towing and roadside assistance in Birmingham, UK",
+            "url": "https://birminghamtowing.co.uk",
             "telephone": PHONE,
-            "image": "https://santaclaritacotowing.com/opengraph.jpg",
+            "image": "https://birminghamtowing.co.uk/opengraph.jpg",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Santa Clarita",
-              "addressRegion": "CA",
-              "addressCountry": "US"
+              "addressLocality": "Birmingham",
+              "addressRegion": "West Midlands",
+              "addressCountry": "GB"
             },
             "geo": {
               "@type": "GeoCoordinates",
@@ -41,7 +41,7 @@ export default function Footer() {
               }
             ],
             "priceRange": "$$",
-            "areaServed": ["Santa Clarita", "Los Angeles", "Burbank", "Glendale", "Pasadena", "San Fernando Valley", "California"]
+            "areaServed": ["Birmingham", "West Midlands", "Solihull", "Sutton Coldfield", "Dudley", "Walsall", "Wolverhampton", "Coventry"]
           })
         }}
       />
@@ -53,12 +53,12 @@ export default function Footer() {
               <Truck className="h-6 w-6" />
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Santa Clarita CA</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Birmingham, UK</p>
               <p className="text-xl font-black text-white">Towing</p>
             </div>
           </Link>
           <p className="text-slate-400 text-sm leading-relaxed">
-            Trusted 24/7 towing and roadside assistance in Santa Clarita CA. Fast dispatch, premium service, and clear pricing.
+            Trusted 24/7 towing and roadside assistance in Birmingham. Fast dispatch, premium service, and clear pricing.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <a
@@ -96,10 +96,9 @@ export default function Footer() {
           <h3 className="text-[#E11D2E] font-semibold uppercase tracking-[0.35em] text-sm mb-4">Quick Links</h3>
           <ul className="space-y-3 text-slate-300 text-sm">
             <li><Link href="/" className="transition hover:text-white">Home</Link></li>
-            <li><Link href="/why-choose-us" className="transition hover:text-white">Why Choose Us</Link></li>
-            <li><Link href="/towing-service-santa-clarita-ca" className="transition hover:text-white">Towing Service Santa Clarita CA</Link></li>
-            <li><Link href="/emergency-towing-santa-clarita-ca" className="transition hover:text-white">Emergency Towing Santa Clarita CA</Link></li>
-            <li><Link href="/roadside-assistance-santa-clarita-ca" className="transition hover:text-white">Roadside Assistance Santa Clarita CA</Link></li>
+            <li><Link href="/towing-service-birmingham" className="transition hover:text-white">Towing Service Birmingham</Link></li>
+            <li><Link href="/emergency-towing-birmingham" className="transition hover:text-white">Emergency Towing Birmingham</Link></li>
+            <li><Link href="/roadside-assistance-birmingham" className="transition hover:text-white">Roadside Assistance Birmingham</Link></li>
           </ul>
         </div>
 
@@ -116,7 +115,7 @@ export default function Footer() {
             </li>
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 text-[#E11D2E] mt-1" />
-              <span>Santa Clarita, CA</span>
+              <span>Birmingham, West Midlands</span>
             </li>
           </ul>
         </div>
@@ -124,8 +123,8 @@ export default function Footer() {
 
       <div className="border-t border-white/10 px-4 py-4">
         <div className="max-w-7xl mx-auto flex flex-col gap-2 md:flex-row justify-between text-xs text-slate-500">
-          <p>© {currentYear} Santa Clarita CA Towing. All rights reserved.</p>
-          <p>Towing Service Santa Clarita CA • Emergency Towing Santa Clarita CA • Roadside Assistance Santa Clarita CA</p>
+          <p>© {currentYear} Birmingham Towing. All rights reserved.</p>
+          <p>Towing Service Birmingham • Emergency Towing Birmingham • Roadside Assistance Birmingham</p>
         </div>
       </div>
     </footer>

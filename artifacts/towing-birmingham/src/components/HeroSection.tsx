@@ -14,10 +14,10 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({
-  title = "Need a Tow Truck in Santa Clarita CA?",
+  title = "Need a Tow Truck in Birmingham?",
   subtitle = "Fast Response • Affordable Rates • Call Now",
-  description = "Stranded in Santa Clarita CA? Our premium tow truck crew responds quickly with safe recovery, roadside assistance, and loading for all vehicle types.",
-  badgeText = "🚨 24/7 Emergency Towing • 30-Min Response",
+  description = "Stranded in Birmingham? Our premium tow truck crew responds quickly with safe recovery, roadside assistance, and vehicle recovery for all vehicle types.",
+  badgeText = "🚨 24/7 Emergency Towing • Fast Local Response",
   primaryButtonText = "CALL NOW – 24/7",
   secondaryButtonText = "WhatsApp Help",
   backgroundImage = "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80"
@@ -57,7 +57,7 @@ export default function HeroSection({
             {primaryButtonText}
           </a>
           <a
-            href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20a%20tow%20truck%20in%20Santa%20Clarita%20CA`}
+            href={`https://wa.me/${WHATSAPP}?text=Hi%2C%20I%20need%20a%20tow%20truck%20in%20Birmingham`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-3 rounded-full border-2 border-[#111111] bg-transparent px-8 py-4 text-base font-semibold text-[#111111] shadow-lg transition hover:bg-[#111111] hover:text-white"
