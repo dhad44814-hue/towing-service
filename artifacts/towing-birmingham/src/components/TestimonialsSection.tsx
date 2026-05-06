@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
             className="flex gap-3"
             style={{
               transform: `translateX(-${scrollOffset}px)`,
-              width: `${testimonialsList.length * (CARD_WIDTH + 12)}px`
+              inlineSize: `${testimonialsList.length * (CARD_WIDTH + 12)}px`
             }}
           >
             <AnimatePresence>

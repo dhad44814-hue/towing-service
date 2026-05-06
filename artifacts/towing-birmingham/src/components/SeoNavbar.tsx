@@ -1,7 +1,4 @@
-"use client";
-
 import { useState } from "react";
-import Link from "next/link";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
 
 const PHONE = "+14386195732";
@@ -36,20 +33,20 @@ export default function SeoNavbar() {
   return (
     <header className="sticky top-0 z-50 bg-[#111111] text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)]">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 md:px-6" aria-label="Primary navigation">
-        <Link href="/" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]">
+        <a href="/" className="flex items-center gap-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]">
           <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-xl font-black text-white">B</span>
           <div>
             <p className="text-base font-semibold tracking-tight">Birmingham Tow</p>
             <p className="text-sm text-slate-200/80">24/7 emergency towing</p>
           </div>
-        </Link>
+        </a>
 
         <div className="hidden items-center gap-10 md:flex">
           <ul className="flex items-center gap-8 text-sm font-medium">
             <li>
-              <Link href="/" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
+              <a href="/" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
                 Home
-              </Link>
+              </a>
             </li>
 
             <li className="relative" onMouseEnter={() => setServicesOpen(true)} onMouseLeave={() => setServicesOpen(false)}>
@@ -71,7 +68,7 @@ export default function SeoNavbar() {
               >
                 <div className="space-y-1 p-3">
                   {serviceLinks.map((service) => (
-                    <Link
+                    <a
                       key={service.href}
                       href={service.href}
                       className="block rounded-2xl px-4 py-3 text-sm text-slate-100 transition hover:bg-[#E11D2E]/15 hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]"
@@ -79,22 +76,22 @@ export default function SeoNavbar() {
                       onClick={closeMenus}
                     >
                       {service.label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               </div>
             </li>
 
             <li>
-              <Link href="/about-us" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
+              <a href="/about-us" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
                 About Us
-              </Link>
+              </a>
             </li>
 
             <li>
-              <Link href="/contact-us" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
+              <a href="/contact-us" className="transition hover:text-[#E11D2E] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#E11D2E]" onClick={closeMenus}>
                 Contact Us
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -122,9 +119,9 @@ export default function SeoNavbar() {
 
       <div className={`md:hidden border-t border-white/10 bg-[#152541] transition-all duration-300 ${mobileOpen ? "max-h-[1000px]" : "max-h-0 overflow-hidden"}`}>
         <div className="space-y-1 px-4 pb-6 pt-4 text-sm">
-          <Link href="/" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
+          <a href="/" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
             Home
-          </Link>
+          </a>
 
           <button
             type="button"
@@ -140,24 +137,24 @@ export default function SeoNavbar() {
           <div className={`overflow-hidden transition-all duration-300 ${servicesOpen ? "max-h-96" : "max-h-0"}`}>
             <div className="space-y-1 px-2 pt-2">
               {serviceLinks.map((service) => (
-                <Link
+                <a
                   key={service.href}
                   href={service.href}
                   className="block rounded-2xl px-4 py-3 text-white transition hover:bg-[#E11D2E]/15 hover:text-[#E11D2E]"
                   onClick={closeMenus}
                 >
                   {service.label}
-                </Link>
+                </a>
               ))}
             </div>
           </div>
 
-          <Link href="/about-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
+          <a href="/about-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
             About Us
-          </Link>
-          <Link href="/contact-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
+          </a>
+          <a href="/contact-us" className="block rounded-2xl px-4 py-3 text-white transition hover:bg-white/10 hover:text-[#E11D2E]" onClick={closeMenus}>
             Contact Us
-          </Link>
+          </a>
         </div>
       </div>
     </header>

@@ -150,9 +150,9 @@ export default function ServicesPage() {
             {expandedService && (
               <motion.div
                 key={expandedService}
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
+                initial={{ opacity: 0, blockSize: 0 }}
+                animate={{ opacity: 1, blockSize: "auto" }}
+                exit={{ opacity: 0, blockSize: 0 }}
                 transition={{ duration: 0.3 }}
                 className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg space-y-6"
               >
