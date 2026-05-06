@@ -2,8 +2,8 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET ?? 'change_me_to_a_strong_secret';
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'digitalmarketingskills46@gmail.com';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'ranazamin@28';
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? 'admin@towing.local';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'TowAdmin123!';
 
 export type AdminSession = {
   email: string;

@@ -1,39 +1,32 @@
-import { MongoClient, Db } from "mongodb";
+import fs from 'node:fs/promises';
+import path from 'node:path';
 
-if (!process.env.MONGO_URL) {
-  throw new Error("MONGO_URL environment variable is not set");
-}
+const dataDirectory = path.join(process.cwd(), 'data');
+const fileMap = {
+  leads: 'leads.json',
+  services: 'services.json',
+  cities: 'cities.json',
+  pages: 'pages.json',
+  media: 'media.json'
+} as const;
 
-const uri = process.env.MONGO_URL;
-const options = {};
+type DataType = keyof typeof fileMap;
 
-let client: MongoClient;
-let db: Db;
-
-// In development, reuse the client across hot reloads (Next.js HMR)
-declare global {
-  // eslint-disable-next-line no-var
-  var _mongoClient: MongoClient | undefined;
-}
-
-if (process.env.NODE_ENV === "development") {
-  if (!global._mongoClient) {
-    global._mongoClient = new MongoClient(uri, options);
+async function readData<T>(key: DataType): Promise<T> {
+  const filePath = path.join(dataDirectory, fileMap[key]);
+  try {
+    const json = await fs.readFile(filePath, 'utf-8');
+    return JSON.parse(json) as T;
+  } catch {
+    return [] as unknown as T;
   }
-  client = global._mongoClient;
-} else {
-  client = new MongoClient(uri, options);
 }
 
-export async function getDB(): Promise<Db> {
-  if (!db) {
-    await client.connect();
-    db = client.db("towing_service");
-  }
-  return db;
+async function writeData<T>(key: DataType, data: T) {
+  const filePath = path.join(dataDirectory, fileMap[key]);
+  await fs.mkdir(dataDirectory, { recursive: true });
+  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
 }
-
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type Lead = {
   id: string;
@@ -77,74 +70,42 @@ export type MediaItem = {
   altText: string;
 };
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-async function getCollection<T>(name: string) {
-  const database = await getDB();
-  return database.collection<T & { _id?: any }>(name);
-}
-
-// ─── Leads ────────────────────────────────────────────────────────────────────
-
-export async function getLeads(): Promise<Lead[]> {
-  const col = await getCollection<Lead>("leads");
-  return col.find().sort({ date: -1 }).toArray() as unknown as Lead[];
+export async function getLeads() {
+  return readData<Lead[]>('leads');
 }
 
 export async function saveLeads(leads: Lead[]) {
-  const col = await getCollection<Lead>("leads");
-  await col.deleteMany({});
-  if (leads.length > 0) await col.insertMany(leads as any);
+  return writeData('leads', leads);
 }
 
-// ─── Services ─────────────────────────────────────────────────────────────────
-
-export async function getServices(): Promise<ServiceItem[]> {
-  const col = await getCollection<ServiceItem>("services");
-  return col.find().toArray() as unknown as ServiceItem[];
+export async function getServices() {
+  return readData<ServiceItem[]>('services');
 }
 
 export async function saveServices(services: ServiceItem[]) {
-  const col = await getCollection<ServiceItem>("services");
-  await col.deleteMany({});
-  if (services.length > 0) await col.insertMany(services as any);
+  return writeData('services', services);
 }
 
-// ─── Cities ───────────────────────────────────────────────────────────────────
-
-export async function getCities(): Promise<CityArea[]> {
-  const col = await getCollection<CityArea>("cities");
-  return col.find().toArray() as unknown as CityArea[];
+export async function getCities() {
+  return readData<CityArea[]>('cities');
 }
 
 export async function saveCities(cities: CityArea[]) {
-  const col = await getCollection<CityArea>("cities");
-  await col.deleteMany({});
-  if (cities.length > 0) await col.insertMany(cities as any);
+  return writeData('cities', cities);
 }
 
-// ─── Pages ────────────────────────────────────────────────────────────────────
-
-export async function getPages(): Promise<PageContent[]> {
-  const col = await getCollection<PageContent>("pages");
-  return col.find().toArray() as unknown as PageContent[];
+export async function getPages() {
+  return readData<PageContent[]>('pages');
 }
 
 export async function savePages(pages: PageContent[]) {
-  const col = await getCollection<PageContent>("pages");
-  await col.deleteMany({});
-  if (pages.length > 0) await col.insertMany(pages as any);
+  return writeData('pages', pages);
 }
 
-// ─── Media ────────────────────────────────────────────────────────────────────
-
-export async function getMedia(): Promise<MediaItem[]> {
-  const col = await getCollection<MediaItem>("media");
-  return col.find().toArray() as unknown as MediaItem[];
+export async function getMedia() {
+  return readData<MediaItem[]>('media');
 }
 
 export async function saveMedia(media: MediaItem[]) {
-  const col = await getCollection<MediaItem>("media");
-  await col.deleteMany({});
-  if (media.length > 0) await col.insertMany(media as any);
+  return writeData('media', media);
 }
