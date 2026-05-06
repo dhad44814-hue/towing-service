@@ -1,15 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "cd artifacts/towing-birmingham && npm install --legacy-peer-deps && npm run build",
-  "outputDirectory": "artifacts/towing-birmingham/dist/public",
-  "installCommand": "npm install --legacy-peer-deps",
-  "framework": null,
+  "buildCommand": "pnpm --dir artifacts/admin-panel run build",
+  "outputDirectory": "artifacts/admin-panel/.next",
+  "installCommand": "npm install -g pnpm && pnpm install --no-frozen-lockfile",
+  "framework": "nextjs",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "env": {
-    "MONGO_URL": "@mongo_url",
-    "PORT": "3001"
-  }
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
 }

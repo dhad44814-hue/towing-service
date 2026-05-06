@@ -20,8 +20,9 @@ node_modules
 .settings/
 *.sublime-workspace
 .env
-
 *.env
+.env.local
+.env.*.local
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json

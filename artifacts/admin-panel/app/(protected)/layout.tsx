@@ -8,7 +8,8 @@ export const metadata = {
 };
 
 async function requireAdmin() {
-  const token = cookies().get('admin_token')?.value;
+  const cookieStore = await cookies();
+  const token = cookieStore.get('admin_token')?.value;
   if (!token) {
     redirect('/login');
   }

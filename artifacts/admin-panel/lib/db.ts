@@ -1,32 +1,39 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { MongoClient, Db } from "mongodb";
 
-const dataDirectory = path.join(process.cwd(), 'data');
-const fileMap = {
-  leads: 'leads.json',
-  services: 'services.json',
-  cities: 'cities.json',
-  pages: 'pages.json',
-  media: 'media.json'
-} as const;
+if (!process.env.MONGO_URL) {
+  throw new Error("MONGO_URL environment variable is not set");
+}
 
-type DataType = keyof typeof fileMap;
+const uri = process.env.MONGO_URL;
+const options = {};
 
-async function readData<T>(key: DataType): Promise<T> {
-  const filePath = path.join(dataDirectory, fileMap[key]);
-  try {
-    const json = await fs.readFile(filePath, 'utf-8');
-    return JSON.parse(json) as T;
-  } catch {
-    return [] as unknown as T;
+let client: MongoClient;
+let db: Db;
+
+// In development, reuse the client across hot reloads (Next.js HMR)
+declare global {
+  // eslint-disable-next-line no-var
+  var _mongoClient: MongoClient | undefined;
+}
+
+if (process.env.NODE_ENV === "development") {
+  if (!global._mongoClient) {
+    global._mongoClient = new MongoClient(uri, options);
   }
+  client = global._mongoClient;
+} else {
+  client = new MongoClient(uri, options);
 }
 
-async function writeData<T>(key: DataType, data: T) {
-  const filePath = path.join(dataDirectory, fileMap[key]);
-  await fs.mkdir(dataDirectory, { recursive: true });
-  await fs.writeFile(filePath, JSON.stringify(data, null, 2), 'utf-8');
+export async function getDB(): Promise<Db> {
+  if (!db) {
+    await client.connect();
+    db = client.db("towing_service");
+  }
+  return db;
 }
+
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export type Lead = {
   id: string;
@@ -70,42 +77,74 @@ export type MediaItem = {
   altText: string;
 };
 
-export async function getLeads() {
-  return readData<Lead[]>('leads');
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+async function getCollection<T>(name: string) {
+  const database = await getDB();
+  return database.collection<T & { _id?: any }>(name);
+}
+
+// ─── Leads ────────────────────────────────────────────────────────────────────
+
+export async function getLeads(): Promise<Lead[]> {
+  const col = await getCollection<Lead>("leads");
+  return col.find().sort({ date: -1 }).toArray() as unknown as Lead[];
 }
 
 export async function saveLeads(leads: Lead[]) {
-  return writeData('leads', leads);
+  const col = await getCollection<Lead>("leads");
+  await col.deleteMany({});
+  if (leads.length > 0) await col.insertMany(leads as any);
 }
 
-export async function getServices() {
-  return readData<ServiceItem[]>('services');
+// ─── Services ─────────────────────────────────────────────────────────────────
+
+export async function getServices(): Promise<ServiceItem[]> {
+  const col = await getCollection<ServiceItem>("services");
+  return col.find().toArray() as unknown as ServiceItem[];
 }
 
 export async function saveServices(services: ServiceItem[]) {
-  return writeData('services', services);
+  const col = await getCollection<ServiceItem>("services");
+  await col.deleteMany({});
+  if (services.length > 0) await col.insertMany(services as any);
 }
 
-export async function getCities() {
-  return readData<CityArea[]>('cities');
+// ─── Cities ───────────────────────────────────────────────────────────────────
+
+export async function getCities(): Promise<CityArea[]> {
+  const col = await getCollection<CityArea>("cities");
+  return col.find().toArray() as unknown as CityArea[];
 }
 
 export async function saveCities(cities: CityArea[]) {
-  return writeData('cities', cities);
+  const col = await getCollection<CityArea>("cities");
+  await col.deleteMany({});
+  if (cities.length > 0) await col.insertMany(cities as any);
 }
 
-export async function getPages() {
-  return readData<PageContent[]>('pages');
+// ─── Pages ────────────────────────────────────────────────────────────────────
+
+export async function getPages(): Promise<PageContent[]> {
+  const col = await getCollection<PageContent>("pages");
+  return col.find().toArray() as unknown as PageContent[];
 }
 
 export async function savePages(pages: PageContent[]) {
-  return writeData('pages', pages);
+  const col = await getCollection<PageContent>("pages");
+  await col.deleteMany({});
+  if (pages.length > 0) await col.insertMany(pages as any);
 }
 
-export async function getMedia() {
-  return readData<MediaItem[]>('media');
+// ─── Media ────────────────────────────────────────────────────────────────────
+
+export async function getMedia(): Promise<MediaItem[]> {
+  const col = await getCollection<MediaItem>("media");
+  return col.find().toArray() as unknown as MediaItem[];
 }
 
 export async function saveMedia(media: MediaItem[]) {
-  return writeData('media', media);
+  const col = await getCollection<MediaItem>("media");
+  await col.deleteMany({});
+  if (media.length > 0) await col.insertMany(media as any);
 }
