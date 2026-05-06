@@ -8,6 +8,7 @@
     "strict": true,
     "jsx": "preserve",
     "types": ["node", "react", "react-dom"],
+    "ignoreDeprecations": "5.0",
     "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
