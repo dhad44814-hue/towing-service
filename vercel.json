@@ -1,9 +1,8 @@
 {
   "version": 2,
   "$schema": "https://vercel.com/schemas/vercel.json",
-  "framework": "nextjs",
   "installCommand": "npm install -g pnpm && pnpm install --no-frozen-lockfile",
-  "buildCommand": "pnpm --dir artifacts/admin-panel run build",
-  "outputDirectory": "artifacts/admin-panel/.next"
+  "buildCommand": "pnpm --dir artifacts/towing-birmingham run build",
+  "outputDirectory": "artifacts/towing-birmingham/dist/public"
 }
 
