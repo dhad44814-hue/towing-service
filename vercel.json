@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vercel.com/schemas/vercel.json",
+  "buildCommand": "pnpm run build:towing-birmingham",
+  "installCommand": "npm install -g pnpm@latest && pnpm install",
+  "outputDirectory": "artifacts/towing-birmingham/dist/public",
+  "framework": "vite",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

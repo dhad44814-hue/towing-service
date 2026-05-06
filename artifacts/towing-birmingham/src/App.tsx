@@ -10,7 +10,6 @@ import RoadsideAssistancePage from "@/pages/RoadsideAssistancePage";
 import ContactPage from "@/pages/ContactPage";
 import AboutPage from "@/pages/AboutPage";
 import ServicesPage from "@/pages/ServicesPage";
-import WhyChooseUsPage from "@/pages/WhyChooseUsPage";
 import ServiceAreasPage from "@/pages/ServiceAreasPage";
 import CityServicePage from "@/pages/CityServicePage";
 import StickyCallBar from "@/components/StickyCallBar";
@@ -22,12 +21,11 @@ function Router() {
     <>
       <Switch>
         <Route path="/" component={HomePage} />
-        <Route path="/towing-service-santa-clarita-ca" component={TowingServicePage} />
+        <Route path="/towing-service-birmingham" component={TowingServicePage} />
         <Route path="/service/:city" component={CityServicePage} />
-        <Route path="/emergency-towing-santa-clarita-ca" component={EmergencyTowingPage} />
-        <Route path="/roadside-assistance-santa-clarita-ca" component={RoadsideAssistancePage} />
+        <Route path="/emergency-towing-birmingham" component={EmergencyTowingPage} />
+        <Route path="/roadside-assistance-birmingham" component={RoadsideAssistancePage} />
         <Route path="/services" component={ServicesPage} />
-        <Route path="/why-choose-us" component={WhyChooseUsPage} />
         <Route path="/service-areas" component={ServiceAreasPage} />
         <Route path="/contact-us" component={ContactPage} />
         <Route path="/about-us" component={AboutPage} />
