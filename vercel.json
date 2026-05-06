@@ -2,7 +2,7 @@
   "version": 2,
   "$schema": "https://vercel.com/schemas/vercel.json",
   "installCommand": "npm install -g pnpm && pnpm install --no-frozen-lockfile",
-  "buildCommand": "pnpm run build",
+  "buildCommand": "node -e \"const fs=require('fs');const {execSync}=require('child_process');const sub='artifacts/towing-birmingham';if(fs.existsSync(sub)){execSync('pnpm --dir '+sub+' run build',{stdio:'inherit'});fs.rmSync('dist',{recursive:true,force:true});fs.mkdirSync('dist',{recursive:true});fs.cpSync(sub+'/dist/public','dist/public',{recursive:true});}else{execSync('pnpm run build',{stdio:'inherit'});}\"",
   "outputDirectory": "dist/public"
 }
 
