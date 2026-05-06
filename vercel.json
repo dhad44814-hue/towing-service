@@ -1,7 +1,8 @@
 {
   "version": 2,
-  "buildCommand": "pnpm --dir artifacts/admin-panel run build",
-  "outputDirectory": "artifacts/admin-panel/.next",
+  "buildCommand": "pnpm run build",
+  "outputDirectory": ".next",
+
   "installCommand": "npm install -g pnpm && pnpm install --no-frozen-lockfile",
   "framework": "nextjs",
   "rewrites": [
